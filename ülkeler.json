@@ -1,0 +1,34 @@
+[
+  {
+  "id":1,
+  "name":"İngiltere",
+  "bilgi":"İngiltere, köklü kültürel mirası ve kozmopolit yapısı ile yurtdışı eğitim için en gözde ülkeler arasında yer alıyor. İngiltere’nin yüksek eğitim kalitesi, kariyer hedeflerinizi genişletmeye yönelik mükemmel fırsatlar vaad ediyor. Dünyadaki en eski ve deneyimli üniversite sistemine ev sahipliği yapmasının yanı sıra modern ve interaktif kaynakları ile gurur duyan ülke, her yıl yurtdışından gelen yaklaşık 240.000 öğrenciye kapılarını açıyor.",
+  "nüfus":65511088,
+  "öğrenci":2600000,
+  "yabancı":4200000,
+  "okullar":227,
+  "dereceli":96
+},
+  {
+    "id":2,
+    "name":"Kanada",
+    "bilgi":"İngiltere, köklü kültürel mirası ve kozmopolit yapısı ile yurtdışı eğitim için en gözde ülkeler arasında yer alıyor. İngiltere’nin yüksek eğitim kalitesi, kariyer hedeflerinizi genişletmeye yönelik mükemmel fırsatlar vaad ediyor. Dünyadaki en eski ve deneyimli üniversite sistemine ev sahipliği yapmasının yanı sıra modern ve interaktif kaynakları ile gurur duyan ülke, her yıl yurtdışından gelen yaklaşık 240.000 öğrenciye kapılarını açıyor.",
+    "nüfus":65511088,
+    "öğrenci":2600000,
+    "yabancı":4200000,
+    "okullar":227,
+    "dereceli":96
+  },
+  {
+    "id":3,
+    "name":"Abd",
+    "bilgi":"İngiltere, köklü kültürel mirası ve kozmopolit yapısı ile yurtdışı eğitim için en gözde ülkeler arasında yer alıyor. İngiltere’nin yüksek eğitim kalitesi, kariyer hedeflerinizi genişletmeye yönelik mükemmel fırsatlar vaad ediyor. Dünyadaki en eski ve deneyimli üniversite sistemine ev sahipliği yapmasının yanı sıra modern ve interaktif kaynakları ile gurur duyan ülke, her yıl yurtdışından gelen yaklaşık 240.000 öğrenciye kapılarını açıyor.",
+    "nüfus":65511088,
+    "öğrenci":2600000,
+    "yabancı":4200000,
+    "okullar":227,
+    "dereceli":96
+  }
+
+
+]
