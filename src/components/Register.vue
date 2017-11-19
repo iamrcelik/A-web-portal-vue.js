@@ -1,5 +1,6 @@
 <script>
     import LandingPage from './LandingPage.vue'
+    import {HTTP} from '../services/http-common'
     export default {
         name: 'Register',
         data(){
@@ -8,8 +9,8 @@
                 db:[],
                 username:'',
                 email: '',
-                lastname:'',
-                firstname:'',
+                lastName:'',
+                firstName:'',
                 password: '',
                 passwordAgain: ''
             }
@@ -24,15 +25,15 @@
 
         },
         methods: {
-            register:  (event) =>{
+            register:  function(event){
                 if(this.password !== this.passwordAgain)
                     return;
 
-                axios.post("http://localhost:8090/register", {
+                HTTP.post("http://localhost:8090/register", {
                     email: this.email,
                     password: this.password,
-                    lastname: this.lastName,
-                    firstname: this.firstName,
+                    lastName: this.lastName,
+                    firstName: this.firstName,
                     username: this.username
                 }).then(response => {
                     location.href = '/';
@@ -60,7 +61,7 @@
             <form>
                 <h2 class="text-center">KAYIT OL</h2>
                 <div class="form-group">
-                    <input type="input" v-model="username" name="username" placeholder="Kullanıcı Adı" class="form-control" />
+                    <input type="input" v-model="username" name="userName" placeholder="Kullanıcı Adı" class="form-control" />
                 </div>
                 <div class="form-group">
                     <input type="input" v-model="firstName" name="firstName" placeholder="İsim" class="form-control" />
