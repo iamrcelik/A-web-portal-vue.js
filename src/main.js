@@ -2,11 +2,21 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
-
+import VueToastr from '@deveodk/vue-toastr'
+import VueCarousel from 'vue-carousel';
 import routerOptions from './router/router'
+import Tabs from 'vue-tabs-component';
+
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use(VueCarousel);
+Vue.use(Tabs);
+Vue.use(VueToastr, {
+    defaultPosition: 'toast-top-right',
+    defaultType: 'info',
+    defaultTimeout: 3000
+});
 const router = new VueRouter(routerOptions);
 
 new Vue({

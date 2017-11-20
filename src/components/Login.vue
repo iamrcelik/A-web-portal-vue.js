@@ -1,5 +1,6 @@
 <script>
     import LandingPage from './LandingPage.vue'
+    import {HTTPAuth} from '../services/http-common'
     export default {
         name: 'Register',
         data(){
@@ -22,7 +23,8 @@
                 }).then(response => {
                     localStorage.setItem('token', response.data.token);
                     window.loggedIn = true;
-                    location.href = '/';
+                    this.$router.push('/profile');
+                    this.$toastr('warning', 'Size Uygun Okulun Belirlenmesi İçin Aşağıdaki Bilgileri Eksiksiz Doldurunuz!', 'Merhaba');
                 })
             }
         }
@@ -30,17 +32,6 @@
 </script>
 
 <template>
-    <html>
-
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled</title>
-        <link rel="stylesheet" href="bootstrap.min.css" />
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-
-    <body>
     <div class="register-photo">
         <div class="form-container">
             <div class="image-holder"></div>
@@ -57,9 +48,6 @@
                 </div><a href="#" class="already">Şifremi unuttum!</a></form>
         </div>
     </div>
-    </body>
-
-    </html>
 </template>
 
 <style>
@@ -147,7 +135,4 @@
         opacity:0.9;
         text-decoration:none;
     }
-
-
-
 </style>

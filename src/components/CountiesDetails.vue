@@ -6,8 +6,8 @@
     import Foota from './Foota.vue'
     import LandingPage from './LandingPage.vue'
     import CountriesTabs from './CounriesTabs.vue'
-    import CountryLandingPageLoggedIn from './CountryLandingPageLoggedIn.vue'
     import {HTTPAuth, HTTP} from '../services/http-common'
+    import CountryLandingPageLoggedIn from './CountryLandingPageLoggedIn.vue'
 
     export default {
         name:'CountriesDetails',
@@ -47,7 +47,28 @@
         <div v-if="!loggedIn"><country-landing-page :userdata=userdata></country-landing-page></div>
 
           <Loader v-if="isLoading"></Loader>
-        <div v-html="userdata.countryInfo"></div>
+        <div>
+            <tabs>
+                <tab name="Eğitim" >
+                    <div v-html="userdata.countryInfo"></div>
+                </tab>
+                <tab name="Kariyer">
+                    Kariyer
+                </tab>
+                <tab name="Yaşam">
+                    Yaşam
+                </tab>
+                <tab name="Hakkında">
+                    Hakkında
+                </tab>
+                <tab name="Şehirler">
+                    Şehirler
+                </tab>
+                <tab name="Üniversiteler">
+                    Üniversiteler
+                </tab>
+            </tabs>
+        </div>
         <foota></foota>
     </section>
 </template>
@@ -84,7 +105,7 @@
         color: white;
         text-transform: uppercase;
         margin: 0 auto;
-        margin-top: 200px;
+        margin-top: 100px;
         font-size: 100px;
         font-weight: 900;
     }

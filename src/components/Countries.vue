@@ -17,7 +17,6 @@
 </script>
 <template>
     <section class="ülkeler">
-        <router-link :to="CountriesDetailsPath" class="fh5co-card-item image-popup">
             <div class="container">
                 <div class="media-container-row">
                     <div class="card p-3 col-12 col-md-6 col-lg-3">
@@ -34,15 +33,14 @@
                                 </p>
                             </div>
                             <div class="mbr-section-btn text-center">
-                                <a href="https://mobirise.com" class="btn btn-primary display-4">
+                                <router-link :to="CountriesDetailsPath" class="btn btn-primary display-4">
                                     İNCELE
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </router-link>
     </section>
 </template>
 

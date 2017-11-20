@@ -9,8 +9,34 @@
             },
             Login(){
                 return `/auth`;
+            },
+            Profile(){
+                return `/profile`;
+            },
+
+        },
+        data(){
+            return {
+                program:'',
+                loggedIn:false,
+
             }
         },
+        created(){
+            this.loggedIn = window.loggedIn;
+        },
+        methods: {
+            logOut(){
+                localStorage.removeItem('token')
+                window.loggedIn = false;
+                location.href='/';
+            },
+            search :function () {
+                console.log();
+                this.$router.push('/search/' + this.program);
+            }
+        },
+
 
     }
 
@@ -27,11 +53,18 @@
                     <li class="nav-item active">
                         <router-link to="/" class="nav-link" style="color: white !important;">ANASAYFA <span class="sr-only">(current)</span></router-link>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" v-if="!loggedIn">
                         <router-link :to="Login" class="nav-link" style="color: white !important;" >GİRİŞ YAP</router-link>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" v-if="!loggedIn">
                         <router-link :to="Register" class="nav-link" style="color: white !important;" >KAYIT OL</router-link>
+                    </li>
+                    <li class="nav-item" v-if="loggedIn">
+                        <a class="dropdown-toggle" data-toggle="dropdown" style="color: white !important;" ><i class="fa fa-user"></i> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><router-link :to="Profile">Profil</router-link></li>
+                            <li><a v-on:click="logOut">Çıkış Yap</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -42,18 +75,21 @@
             </div>
         </div>
         <div class="arama">
+            <form>
             <div class="login-form">
                 <div class="form-group ">
                     <i class="fa fa-graduation-cap"></i>
-                    <input type="text" class="form-control" placeholder="Ne Okumak İstersin?" id="okul">
+                    <input type="text" class="form-control" v-model="program" placeholder="Ne Okumak İstersin?" id="okul">
                 </div>
                 <div class="form-group ">
                     <i class="fa fa-globe"></i>
                     <input type="text" class="form-control" placeholder="Nerede Okumak İstersin?" id="şehir">
                 </div>
-                    <button type="button" class="log-btn" >HEMEN BUL</button>
+                    <button type="button" class="log-btn" v-on:click="search">HEMEN BUL</button>
             </div>
+            </form>
          </div>
+
     </section>
 </template>
 
@@ -175,4 +211,14 @@
     font-size: 11px;
     font-weight: 400;
 }
+    .nav-item{
+        position: relative;
+    }
+    .dropdown-menu.show{
+        background-color: transparent;
+        border: none;
+    }
+    .nav-item a, a.nav-item{
+        color:white;
+    }
 </style>

@@ -8,7 +8,6 @@
     import Spotlight from './Spotlight.vue'
     import Programs from './Programs.vue'
     import {HTTPAuth, HTTP} from '../services/http-common'
-    import LandingPageLoggedIn from './LandingPageLoggedIn.vue'
     import {loggedIn} from "../services/settings";
 
     export default {
@@ -29,7 +28,6 @@
             Foota,
             Spotlight,
             Programs,
-            LandingPageLoggedIn,
 
 
         },
@@ -47,8 +45,7 @@
 
 <template>
     <section>
-        <div v-if="loggedIn"><landing-page-logged-in></landing-page-logged-in> </div>
-        <div v-if="!loggedIn"> <landing-page></landing-page> </div>
+        <landing-page></landing-page>
 
         <Loader v-if="isLoading"></Loader>
         <spotlight></spotlight>
@@ -58,11 +55,23 @@
                             <h2 class="align-center pb-3 mbr-fonts-style display-2" STYLE="text-align: center !important;"><strong>ÜLKELER</strong></h2>
                             <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
                                 S<span style="font-style: italic;">hape </span><span style="font-style: italic;">your </span><em>future web project </em><span style="font-style: italic;">with </span><span style="font-style: italic;">sharp </span><span style="font-style: italic;">design </span><span style="font-style: italic;">and </span><span style="font-style: italic;">refine </span><span style="font-style: italic;">coded </span><span style="font-style: italic;">functions.</span></h3>
-
+                <Countries v-for="country in db"
+                           key="Countries.id"
+                           :country="country"></Countries>
             </section>
-            <Countries v-for="country in db"
-            key="Countries.id"
-            :country="country"></Countries>
+            <div class="clearfix"></div>
+        </section>
+
+        <section id="programlar" style="background-color: gainsboro; height: 400px">
+        <div class="highlight-clean">
+            <div class="container">
+                <div class="intro">
+                    <h2 class="text-center" style="padding-top: 50px"><strong>UZMANLIK ALANLARI</strong></h2>
+                    <p class="text-center" style="padding-bottom: 50px">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+                </div>
+            </div>
+        </div>
+        <programs></programs>
         </section>
         <banner></banner>
         <foota></foota>

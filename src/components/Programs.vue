@@ -1,22 +1,119 @@
 <script>
     export default {
         name: 'Programs',
+        props: {
+        },
+        computed: {
+            ProgramDetailsPath() {
+                return `programDetails`;
+            }
+        }
     };
+
+
 </script>
 
 <template>
-    <section class="mbr-cards mbr-section mbr-section-nopadding" id="features4-2" data-rv-view="6" style="background-color: rgb(204, 204, 204);">
-        <div class="mbr-cards-row row">
-            <div class="mbr-cards-col col-xs-12 col-lg-2" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="container">
-                    <div class="card cart-block">
-                        <div class="card-img iconbox"><a href="https://mobirise.com" class="etl-icon icon-phone mbr-iconfont mbr-iconfont-features4" style="color: rgb(65, 168, 95);"></a></div>
-                        <div class="card-block">
-                            <h4 class="card-title"><span style="font-weight: normal;">Bootstrap 4</span></h4>
-                        </div>
-                    </div>
+   <!---- <router-link :to="ProgramDetailsPath"> --->
+    <carousel :navigationEnabled="true"  :perPage="5" :autoplay="true">
+        <slide>
+            <div class="col-sm-12">
+                <div class="round">
+                    <img src="src/assets/tıp.png">
+                    <label>Sağlık ve Tıp</label>
                 </div>
             </div>
-        </div>
-    </section>
-</template>
+        </slide>
+        <slide>
+            <div class="col-sm-12">
+                <div class="round">
+                    <img src="src/assets/sosyal.png">
+                    <label>Sosyal Bilimler</label>
+                </div>
+            </div>
+        </slide>
+        <slide>
+            <div class="col-sm-12">
+                <div class="round">
+                    <img src="src/assets/chart.png">
+                    <label>İşletme ve Yönetim</label>
+                </div>
+            </div>
+        </slide>
+        <slide>
+            <div class="col-sm-12">
+                <div class="round">
+                    <img src="src/assets/art.png">
+                    <label>Sanat ve Tasarım</label>
+                </div>
+            </div>
+        </slide>
+        <slide>
+            <div class="col-sm-12">
+                <div class="round">
+                    <img src="src/assets/science.png">
+                    <label>Fen Bilimleri</label>
+                </div>
+            </div>
+        </slide>
+        <slide>
+            <div class="col-sm-12">
+                <div class="round round-sm hollow blue">
+                    <img src="src/assets/engineering.png">
+                    <label>Mühendislik</label>
+                </div>
+            </div>
+        </slide>
+        <slide>
+            <div class="col-sm-12">
+                <div class="round round-sm hollow blue">
+                    <img src="src/assets/code.png">
+                    <label>Bilgisayar Bilimleri</label>
+                </div>
+            </div>
+        </slide>
+        <slide>
+            <div class="col-sm-12">
+                <div class="round round-sm hollow blue">
+                    <img src="src/assets/justice.png">
+                    <label>Hukuk</label>
+                </div>
+            </div>
+        </slide>
+        <slide>
+            <div class="col-sm-12">
+                <div class="round round-sm hollow blue">
+                    <img src="src/assets/media.png">
+                    <label>Gazetecilik ve Medya</label>
+                </div>
+            </div>
+        </slide>
+        <slide>
+            <div class="col-sm-12">
+                <div class="round round-sm hollow blue">
+                    <img src="src/assets/book.png">
+                    <label>Eğitim Bilimleri</label>
+                </div>
+            </div>
+        </slide>
+
+    </carousel>
+    <!----  </router-link> --->
+  </template>
+
+  <style>
+      .round{
+          text-align: center;
+      }
+  .round img{
+      height: 80px;
+      width: 80px;
+  }
+      .round label{
+          display: block;
+      }
+      .VueCarousel-pagination{
+          background-color: gainsboro;
+      }
+      label{margin-top: 15px}
+  </style>

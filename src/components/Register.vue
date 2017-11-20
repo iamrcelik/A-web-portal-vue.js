@@ -37,6 +37,7 @@
                     username: this.username
                 }).then(response => {
                     location.href = '/';
+                    this.username = response.data.username;
                 })
             }
         }
