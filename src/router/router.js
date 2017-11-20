@@ -8,6 +8,7 @@ import Login from '../components/Login.vue'
 import Profile from '../components/Profile.vue'
 import ProgramDetails from '../components/ProgramDetails.vue'
 import Search from '../components/Search.vue'
+import RegisterAuth from '../components/RegisterAuth.vue'
 export default {
     routes:[
         {
@@ -49,7 +50,11 @@ export default {
         {
             path: '/search/:term',
             component : Search,
-        }
+        },
+        {
+            path: '/activation',
+            component: RegisterAuth,
+        },
 
 
     ],

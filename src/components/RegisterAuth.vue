@@ -7,12 +7,8 @@
             return {
                 isLoading:true,
                 db:[],
-                username:'',
+                activationKey:'',
                 email: '',
-                lastName:'',
-                firstName:'',
-                password: '',
-                passwordAgain: ''
             }
         },
         components: {
@@ -26,17 +22,10 @@
         },
         methods: {
             register:  function(event){
-                if(this.password !== this.passwordAgain)
-                    return;
-
-                HTTP.post("http://localhost:8090/register", {
+                HTTP.post("http://localhost:8090/activate", {
                     email: this.email,
-                    password: this.password,
-                    lastName: this.lastName,
-                    firstName: this.firstName,
-                    username: this.username
+                    activationKey: this.activationKey
                 }).then(response => {
-                    location.href = '/';
                     this.username = response.data.username;
                     this.$router.push('/profile');
                     this.$toastr('warning', 'Size Uygun Okulun Belirlenmesi İçin Aşağıdaki Bilgileri Eksiksiz Doldurunuz!', 'Merhaba');
@@ -64,26 +53,14 @@
             <form>
                 <h2 class="text-center">KAYIT OL</h2>
                 <div class="form-group">
-                    <input type="input" v-model="username" name="userName" placeholder="Kullanıcı Adı" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <input type="input" v-model="firstName" name="firstName" placeholder="İsim" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <input type="input" v-model="lastName" name="lastName" placeholder="Soyisim" class="form-control" />
+                    <input type="input" v-model="activationKey" name="activationKey" placeholder="Kullanıcı Adı" class="form-control" />
                 </div>
                 <div class="form-group">
                     <input type="email" v-model="email" name="email" placeholder="Email" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="password" v-model="password" name="password" placeholder="Şifre" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <input type="password" v-model="passwordAgain" name="password-repeat" placeholder="Şifre (tekrar)" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="button" v-on:click="register">KAYIT OLL</button>
-                </div><a href="#" class="already">Daha önce bir hesabın var mı? Buradan giriş yap!</a></form>
+                    <button class="btn btn-primary btn-block" type="button" v-on:click="register">GİRİŞ YAP</button>
+                </div></form>
         </div>
     </div>
     </body>

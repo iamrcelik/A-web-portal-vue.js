@@ -23,8 +23,7 @@
                 }).then(response => {
                     localStorage.setItem('token', response.data.token);
                     window.loggedIn = true;
-                    this.$router.push('/profile');
-                    this.$toastr('warning', 'Size Uygun Okulun Belirlenmesi İçin Aşağıdaki Bilgileri Eksiksiz Doldurunuz!', 'Merhaba');
+                    this.$router.push('/');
                 })
             }
         }

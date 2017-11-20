@@ -79,23 +79,23 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputUsername">Kullanıcı Adı</label>
-                        <input type="input" v-model="username" name="userName"  id="inputUsername" placeholder="Kullanıcı Adı" class="form-control" />
+                        <input type="input" v-model="username" name="userName"  id="inputUsername" placeholder="Kullanıcı Adı" class="form-control" disabled="disabled"/>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputName">İsim</label>
-                        <input type="input" v-model="firstName" name="firstName" placeholder="İsim" id="inputName" class="form-control" />
+                        <input type="input" v-model="firstName" name="firstName" placeholder="İsim" id="inputName" class="form-control" disabled="disabled"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputLastName">Soyisim</label>
-                        <input type="input" v-model="lastName" name="lastName" placeholder="Soyisim" id="inputLastName" class="form-control" />
+                        <input type="input" v-model="lastName" name="lastName" placeholder="Soyisim" id="inputLastName" class="form-control" disabled="disabled"/>
 
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail">Email</label>
-                    <input type="email" v-model="email" name="email" placeholder="Email"  id="inputEmail" class="form-control" />
+                    <input type="email" v-model="email" name="email" placeholder="Email"  id="inputEmail" class="form-control" disabled="disabled"/>
                 </div>
 
             </form>
