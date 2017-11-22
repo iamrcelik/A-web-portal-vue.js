@@ -36,9 +36,8 @@
                     firstName: this.firstName,
                     username: this.username
                 }).then(response => {
-                    location.href = '/';
                     this.username = response.data.username;
-                    this.$router.push('/profile');
+                    this.$router.push('/activation');
                     this.$toastr('warning', 'Size Uygun Okulun Belirlenmesi İçin Aşağıdaki Bilgileri Eksiksiz Doldurunuz!', 'Merhaba');
                 })
             }

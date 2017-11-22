@@ -33,6 +33,7 @@
                 interestCountry:'',
                 interestProgram:'',
                 toefl:'',
+                userInfo:'{}',
 
             }
         },
@@ -45,12 +46,23 @@
                 this.email = response.data.email;
                 this.firstName = response.data.firstName;
                 this.lastName = response.data.lastName;
+                    this.averageGrade = response.data.userInfo.averageGrade;
+                    this.country = response.data.userInfo.country;
+                    this.experience = response.data.userInfo.experience;
+                    this.graduateCountry = response.data.userInfo.graduateCountry;
+                    this.graduateProgram = response.data.userInfo.graduateProgram;
+                    this.interestCountry = response.data.userInfo.interestCountry;
+                    this.interestProgram = response.data.userInfo.interestProgram;
+                    this.toefl = response.data.userInfo.toefl;
+
+
+
             })
         },
         methods: {
-           updateUserProfile :function () {
+           updateUserProfile :function (event) {
                HTTPAuth.post("http://localhost:8090/user", {
-                    userInfo: {
+
                         averageGrade: this.averageGrade,
                         country: this.country,
                         experience: this.experience,
@@ -59,11 +71,13 @@
                         interestCountry: this.interestCountry,
                         interestProgram: this.interestProgram,
                         toefl: this.toefl,
-                    }
+
                }).then(response => {
                    this.$toastr('success', 'Bilgileriniz Güncellenmiştir.Teşekkürler!', 'Merhaba');
+                   console.log(response);
                })
-           }
+           },
+
         },
     };
 
@@ -106,41 +120,41 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputAvg">Mezuniyet Ortalaması</label>
-                        <input type="email" v-model="averageGrade" name="averageGrade" placeholder="Mezuniyet Ortalaması" id="inputAvg" class="form-control" />
+                        <input type="input" v-model="averageGrade" name="averageGrade" placeholder="Mezuniyet Ortalaması" id="inputAvg" class="form-control"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputPoint">Toefl/Ielts Puanı</label>
-                        <input type="toefl" v-model="toefl" name="toefl" placeholder="Toefl Puanı" id="inputPoint" class="form-control" />
+                        <input type="input" v-model="toefl" name="toefl" placeholder="Toefl Puanı" id="inputPoint" class="form-control" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCountry">Ülke</label>
-                        <input type="country" v-model="country" name="country" placeholder="Ülke" id="inputCountry" class="form-control" />
+                        <input type="input" v-model="country" name="country" placeholder="Ülke" id="inputCountry" class="form-control" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputExp">İş Tecrübesi</label>
-                        <input type="experience" v-model="experience" name="experience" placeholder="İş Tecrübesi(Yıl)" id="inputExp" class="form-control" />
+                        <input type="input" v-model="experience" name="experience" placeholder="İş Tecrübesi(Yıl)" id="inputExp" class="form-control" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputGradCountry">Mezun Olduğun Ülke</label>
-                        <input type="graduateCountry" v-model="graduateCountry" name="graduateCountry" placeholder="Mezun Olduğun Ülke" id="inputGradCountry" class="form-control" />
+                        <input type="input" v-model="graduateCountry" name="graduateCountry" placeholder="Mezun Olduğun Ülke" id="inputGradCountry" class="form-control" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputGradProg">Mezun Olduğun Bölüm</label>
-                        <input type="graduateProgram" v-model="graduateProgram" name="graduateProgram" placeholder="Mezun Olduğun Bölüm"  id="inputGradProg" class="form-control" />
+                        <input type="input" v-model="graduateProgram" name="graduateProgram" placeholder="Mezun Olduğun Bölüm"  id="inputGradProg" class="form-control" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputDesCountry">Okumak İstediğin Ülke</label>
-                        <input type="interestCountry" v-model="interestCountry" name="interestCountry" placeholder="Okumak İstediğin Ülke" id="inputDesCountry" class="form-control" />
+                        <input type="input" v-model="interestCountry" name="interestCountry" placeholder="Okumak İstediğin Ülke" id="inputDesCountry" class="form-control" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputDesProg">Okumak İstediğin Bölüm</label>
-                        <input type="interestProgram" v-model="interestProgram" name="interestProgram" placeholder="Okumak İstediğin Bölüm" id="inputDesProg" class="form-control" />
+                        <input type="input" v-model="interestProgram" name="interestProgram" placeholder="Okumak İstediğin Bölüm" id="inputDesProg" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -151,6 +165,7 @@
                 </div>
             </form>
         </div>
+        <foota></foota>
     </section>
     <!-------
     <section>
