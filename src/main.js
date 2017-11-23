@@ -6,12 +6,14 @@ import VueToastr from '@deveodk/vue-toastr'
 import VueCarousel from 'vue-carousel';
 import routerOptions from './router/router'
 import Tabs from 'vue-tabs-component';
+import VeeValidate from 'vee-validate';
 
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueCarousel);
 Vue.use(Tabs);
+Vue.use(VeeValidate);
 Vue.use(VueToastr, {
     defaultPosition: 'toast-top-right',
     defaultType: 'info',

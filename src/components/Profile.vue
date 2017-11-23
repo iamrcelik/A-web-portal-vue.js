@@ -160,7 +160,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" ></label>
                     <div class="col-md-4">
-                        <button type="button" class="btn btn-success" v-on:click="updateUserProfile">Submit</button>
+                        <button type="button" class="btn btn-success" v-on:click="updateUserProfile">GÜNCELLE</button>
                     </div>
                 </div>
             </form>

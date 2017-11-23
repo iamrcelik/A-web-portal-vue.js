@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">ANASAYFA <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/" style="color: white">ANASAYFA <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item" v-if="!loggedIn">
                     <router-link :to="Login" class="nav-link" style="color: white !important;" >GİRİŞ YAP</router-link>
