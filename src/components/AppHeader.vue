@@ -33,9 +33,9 @@
 
 </script>
 <template>
-    <section id = menu>
+    <section id = menu style="background-image: url(src/assets/back2.jpg);">
     <nav class="navbar navbar-expand-lg navbar-light">
-        <router-link to="/" class="navbar-brand">justForeign</router-link>
+        <router-link to="/" class="navbar-brand" style="color: #ffffff;">justForeign</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,7 +64,13 @@
 </template>
 <style>
     #menu{
-        background-color: green;
+        width: 100%;
+        height: 300px;
+        background-color: #060;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+        background-size: cover;
     }
     .nav-item{
         position: relative;
