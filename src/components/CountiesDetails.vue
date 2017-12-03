@@ -50,22 +50,22 @@
         <div>
             <tabs>
                 <tab name="Eğitim" >
-                    <div v-html="userdata.countryInfo"></div>
+                    <div v-html="userdata.education"></div>
                 </tab>
                 <tab name="Kariyer">
-                    Kariyer
+                    <div v-html="userdata.career"></div>
                 </tab>
                 <tab name="Yaşam">
-                    Yaşam
+                    <div v-html="userdata.living"></div>
                 </tab>
                 <tab name="Hakkında">
-                    Hakkında
+                    <div v-html="userdata.about"></div>
                 </tab>
                 <tab name="Şehirler">
-                    Şehirler
+                    <div v-html="userdata.cities_info"></div>
                 </tab>
                 <tab name="Üniversiteler">
-                    Üniversiteler
+                    <div v-html="userdata.universitiesInfo"></div>
                 </tab>
             </tabs>
         </div>

@@ -28,7 +28,7 @@ export default {
             component: Programs,
         },
         {
-            path: '/countries/:country_id/cities/:id',
+            path: '/countries/:id/cities/',
             component: Cities,
         },
         {

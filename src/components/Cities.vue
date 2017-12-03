@@ -8,7 +8,7 @@
             }
         },
         created(){
-            axios.get(`http://localhost:8090/countries/${this.$route.params.id}/cities/${this.$route.params.id}`)
+            axios.get(`http://localhost:8090/countries/cities/${this.$route.params.id}`)
                 .then(response => {this.userdata = response.data; this.isLoading = false;
                 })
         }

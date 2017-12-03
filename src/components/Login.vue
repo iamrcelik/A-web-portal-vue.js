@@ -45,7 +45,7 @@
             <div class="w3ls-form">
                 <form action="/" method="post">
                     <label>Kullanıcı Adı</label>
-                    <input type="input" v-model="username" name="username"  placeholder="Kullanıcı Adı" class="form-control"/>
+                    <input type="input" v-model="username" name="username"  placeholder="Kullanıcı Adı" class="form-control" required/>
                     <label>Şifre</label>
                     <input type="password" v-model="password" name="password" placeholder="Şifre" class="form-control" required />
                     <a href="#" class="pass">Şifremi unuttum!</a>
