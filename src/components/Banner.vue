@@ -5,7 +5,7 @@
             <div class="display-t">
                 <div class="display-tc">
                     <h1>Hayalinizdeki Eğitim İçin Hazır Olun!</h1><br>
-                    <button type="button" class="HemenBul" >HEMEN BUL</button>
+                 <button type="button" class="HemenBul" >HEMEN BUL</button>
                 </div>
             </div>
         </div>

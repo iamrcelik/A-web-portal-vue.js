@@ -5,7 +5,6 @@
     import Loader from './Loader.vue'
     import Foota from './Foota.vue'
     import LandingPage from './LandingPage.vue'
-    import CountriesTabs from './CounriesTabs.vue'
     import {HTTPAuth, HTTP} from '../services/http-common'
     import CountryLandingPageLoggedIn from './CountryLandingPageLoggedIn.vue'
 
@@ -18,15 +17,20 @@
 
             }
         },
+        computed: {
+            CitiesDetails() {
+                return `/countries/${this.userdata.id}/cities`;
+            }
+        },
 
-        components: {
+
+    components: {
             LandingPage,
             Loader,
             Countries,
             Foota,
             CountryLandingPage,
             CountryLandingPageLoggedIn,
-            CountriesTabs,
         },
         created(){
             console.log(this.$route.params)
@@ -50,7 +54,10 @@
         <div>
             <tabs>
                 <tab name="Eğitim" >
-                    <div v-html="userdata.education"></div>
+                    <router-link :to="CitiesDetails"> <h1>ahmet</h1> </router-link>
+                    <div v-html="userdata.education">
+
+                    </div>
                 </tab>
                 <tab name="Kariyer">
                     <div v-html="userdata.career"></div>
@@ -377,5 +384,8 @@ Numbers
     }
     table.city ,th.city,td.city{
         border:none;
+    }
+    .tabs-details{
+        padding: 100px;
     }
 </style>
