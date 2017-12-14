@@ -44,7 +44,7 @@ export default {
             component: Profile,
         },
         {
-            path: '/programDetails',
+            path: '/countries/:id/cities/programmes',
             component: ProgramDetails,
         },
         {

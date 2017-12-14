@@ -54,9 +54,7 @@
         <div>
             <tabs>
                 <tab name="Eğitim" >
-                    <router-link :to="CitiesDetails"> <h1>ahmet</h1> </router-link>
                     <div v-html="userdata.education">
-
                     </div>
                 </tab>
                 <tab name="Kariyer">
@@ -69,7 +67,44 @@
                     <div v-html="userdata.about"></div>
                 </tab>
                 <tab name="Şehirler">
-                    <div v-html="userdata.cities_info"></div>
+                    <table class="city" style="width:100%" >
+                        <tr class="city">
+                            <td class="city"><router-link :to="CitiesDetails"> NewYork</router-link></td>
+                            <td class="city">Las Vegas</td>
+                        </tr>
+                        <tr class="city">
+                            <td class="city"><a href="">San Francisco</a></td>
+                            <td class="city">San Diego</td>
+                        </tr>
+                        <tr class="city">
+                            <td class="city"><a href="">Miami</a></td>
+                            <td class="city">Dallas</td>
+                        </tr>
+                        <tr class="city">
+                            <td class="city">Los Angeles</td>
+                            <td class="city">New Orleans</td>
+                        </tr>
+                        <tr class="city">
+                            <td class="city">Washington DC</td>
+                            <td class="city">Atlanta</td>
+                        </tr>
+                        <tr class="city">
+                            <td class="city">Chicago</td>
+                            <td class="city">Florida</td>
+                        </tr>
+                        <tr class="city">
+                            <td class="city">Austin</td>
+                            <td class="city">San Antonio</td>
+                        </tr>
+                        <tr class="city">
+                            <td class="city">Phoenix</td>
+                            <td class="city">Indianapolis</td>
+                        </tr>
+                        <tr class="city">
+                            <td class="city">Sacramento</td>
+                            <td class="city">California</td>
+                        </tr>
+                    </table>
                 </tab>
                 <tab name="Üniversiteler">
                     <div v-html="userdata.universitiesInfo"></div>
