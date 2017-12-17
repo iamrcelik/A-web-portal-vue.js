@@ -32,7 +32,7 @@
                 graduateProgram:'',
                 interestCountry:'',
                 interestProgram:'',
-                toefl:'',
+                ielts:'',
                 userInfo:'{}',
 
             }
@@ -53,7 +53,7 @@
                     this.graduateProgram = response.data.userInfo.graduateProgram;
                     this.interestCountry = response.data.userInfo.interestCountry;
                     this.interestProgram = response.data.userInfo.interestProgram;
-                    this.toefl = response.data.userInfo.toefl;
+                    this.ielts = response.data.userInfo.ielts;
 
 
 
@@ -70,7 +70,7 @@
                         graduateProgram: this.graduateProgram,
                         interestCountry: this.interestCountry,
                         interestProgram: this.interestProgram,
-                        toefl: this.toefl,
+                        ielts: this.ielts,
 
                }).then(response => {
                    this.$toastr('success', ' Bilgileriniz Güncellenmiştir.Teşekkürler!', 'Merhaba');
@@ -134,9 +134,9 @@
                                         <input type="input" v-model="averageGrade" name="averageGrade" placeholder="Mezuniyet Ortalaması(4.00)" id="inputAvg" class="form-control"/>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputPoint">Toefl/Ielts Puanı</label>
+                                        <label for="inputPoint">Ielts Puanı</label>
 
-                                        <input type="input" v-model="toefl" name="toefl" placeholder="Toefl Puanı" id="inputPoint" class="form-control" />
+                                        <input type="input" v-model="ielts" name="ielts" placeholder="Ielts Puanı" id="inputPoint" class="form-control" />
                                     </div>
                                     <div class="form-group">
 

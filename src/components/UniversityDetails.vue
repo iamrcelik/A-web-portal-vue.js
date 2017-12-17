@@ -4,25 +4,24 @@
     import {Tabs,Tab} from 'vue-tabs-component';
 
     export default {
-        name: 'Cities',
+        name: 'UniversiyDetails',
+        props: {
+        },
         data(){
             return {
-                loggedIn:false,
                 isLoading:true,
                 userdata:[],
-                options: null
             }
         },
         components: {
             Foota,
         },
-
         created(){
             console.log(this.$route.params)
             this.loggedIn = window.loggedIn;
             HTTP.get(`http://localhost:8090/countries/${this.$route.params.id}/cities`)
                 .then(response => {this.userdata = response.data, this.isLoading = false;
-                console.log(this.$route.params.id)
+                    console.log(this.$route.params.id)
                     console.log(response)
                 })
         },
@@ -36,10 +35,12 @@
             Profile(){
                 return `/profile`;
             },
-            ProgramDetails() {
-                    return `/countries/${this.userdata[0].id}/cities/${this.userdata[0].id}/universities`;
-                }
-            },
+            Program(){
+                return `/countries/${this.userdata[0].id}/cities/${this.userdata[0].id}/universities/${this.userdata[0].universities[0].id}/programmes`;
+            }
+
+
+        },
         methods:{
             logOut(){
                 localStorage.removeItem('token')
@@ -48,10 +49,12 @@
             }
         }
     };
-</script>
 
+</script>
+<section>
+</section>
 <template>
-    <section class="alan" :style='{ backgroundImage: `url(${userdata[0].landingPhoto})` }'>
+    <section class="alan" :style='{ backgroundImage: `url(${userdata[0].universities[0].landingPhoto})` }'>
         <nav class="navbar navbar-expand-sm navbar-light">
             <router-link to="/" class="navbar-brand"><img src="http://localhost:8080/src/assets/jf-logos-03.png"> </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,7 +83,7 @@
         </nav>
         <div class="header-pic">
             <div class="row">
-                <h1 class="header-pic">{{userdata[0].name}}</h1>
+                <h1 class="header-pic">{{userdata[0].universities[0].name}}</h1>
             </div>
         </div>
         <div class="arama">
@@ -99,7 +102,7 @@
 
                 <div class="numbers">
                     <i class="icon fa fa-users"></i>
-                    <span class="counter">{{userdata[0].population}}</span>
+                    <span class="counter">{{userdata[0].universities[0].studentNumber}}</span>
                     <span class="label">NÜFUS</span>
                 </div>
 
@@ -107,47 +110,34 @@
 
                 <div class="numbers">
                     <i class="icon fa fa-graduation-cap"></i>
-                    <span class="counter">{{userdata[0].livingCost}}</span>
+                    <span class="counter">{{userdata[0].universities[0].ranking}}</span>
                     <span class="label">YAŞAM ÜCRETİ</span>
                 </div>
 
 
                 <div class="numbers">
                     <i class="icon fa fa-globe"></i>
-                    <span class="counter">{{userdata[0].studentNumber}}</span>
+                    <span class="counter">{{userdata[0].universities[0].masterNumber}}</span>
                     <span class="label">ÖĞRENCİLER</span>
                 </div>
-
-
-                <div class="numbers">
-                    <i class="icon fa fa-university"></i>
-                    <span class="counter">{{userdata[0].universityNumber}}</span>
-                    <span class="label">OKULLAR</span>
-                </div>
-                <div class="numbers">
-                    <i class="icon fa fa-check"></i>
-                    <span class="counter">57</span>
-                    <span class="label">DERECELİ OKULLAR</span>
-                </div>
-
             </div>
         </section>
         <div>
             <tabs>
                 <tab name="Eğitim" >
-                    <div v-html="userdata[0].education">
+                    <div v-html="userdata[0].universities[0].education">
                     </div>
                 </tab>
                 <tab name="Kariyer">
-                    <div v-html="userdata[0].career"></div>
+                    <div v-html="userdata[0].universities[0].career"></div>
                 </tab>
                 <tab name="Hakkında">
-                    <div v-html="userdata[0].about"></div>
+                    <div v-html="userdata[0].universities[0].about"></div>
                 </tab>
                 <tab name="Üniversiteler">
                     <table class="city" style="width:100%" >
                         <tr class="city">
-                            <td class="city"><router-link :to="ProgramDetails"> NewYork</router-link></td>
+                            <td class="city"><router-link :to="Program">NewYork</router-link></td>
                             <td class="city">Las Vegas</td>
                         </tr>
                         <tr class="city">

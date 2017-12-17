@@ -18,7 +18,10 @@
         data(){
             return {
                 program:'',
-                loggedIn:false,
+                aValid: true,
+                country:'',
+                countryValid: true,
+                loggedIn: false,
 
             }
         },
@@ -32,8 +35,21 @@
                 location.href='/';
             },
             search :function () {
-                console.log();
-                this.$router.push('/search/' + this.program);
+                if(!this.program){
+                    this.aValid = false;
+                    this.$toastr('error', 'Program Boş Olamaz!', 'Hatalı!');
+                    return;
+                } else {
+                    this.aValid = true;
+                }
+                if(!this.country){
+                    this.countryValid = false;
+                    this.$toastr('error', 'Ülke Boş Olamaz!', 'Hatalı!');
+                    return;
+                } else {
+                    this.countryValid = true;
+                }
+                this.$router.push('/search/' + this.program+'/'+this.country);
             }
         },
 
@@ -79,11 +95,11 @@
             <div class="login-form">
                 <div class="form-group ">
                     <i class="fa fa-graduation-cap"></i>
-                    <input type="text" class="form-control" v-model="program" placeholder="Ne Okumak İstersin?" id="okul">
+                    <input type="text" class="form-control" v-model="program" placeholder="Ne Okumak İstersin?" id="okul"      v-bind:class="{ valid: aValid, invalid: !aValid } "v-validate="{ required: true, }">
                 </div>
                 <div class="form-group ">
                     <i class="fa fa-globe"></i>
-                    <input type="text" class="form-control" placeholder="Nerede Okumak İstersin?" id="şehir">
+                    <input type="text" class="form-control" v-model="country" placeholder="Nerede Okumak İstersin?" id="şehir" v-bind:class="{ valid: countryValid, invalid: !countryValid }"v-validate="{ required: true, }">
                 </div>
                     <button type="button" class="log-btn" v-on:click="search">HEMEN BUL</button>
             </div>
@@ -99,6 +115,7 @@
     ------------- */
 .alan {
     height: 900px;
+    position:relative;
 }
 .navbar{
     margin-left: 5%;
@@ -132,26 +149,19 @@
     color: white;
 }
 .login-form{
-    width: 40%;
+    width: 500px;
     height: 350px;
     padding: 40px 30px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    margin-left: 490px;
+    /* margin-left: 490px; */
     border-radius: 4px;
-    left: 0;
+    margin-left: -250px;
+    left: 50%;
     right: 0;
-    top:80%;
+    top: 50%;
+    position: absolute;
 }
-    @media screen and (max-width: 768px) {
-        .login-form{
-            width: 90%;
-            padding-top: 10px;
-            margin-left: 0px;
-            margin-right: 0px;
-            margin-bottom: 5%;
-        }
-    }
 .login-form h1{
     color: white;
     text-transform: uppercase;

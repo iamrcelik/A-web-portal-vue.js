@@ -14,6 +14,40 @@
             return {
                 isLoading:true,
                 userdata:[],
+                cities: [
+                    {
+                        name: 'NewYork',
+                        id: 1
+                    },
+                    {
+                        name: 'Milano',
+                        id: 4
+                    },
+                    {
+                        name: 'Londra',
+                        id: 2
+                    },
+                    {
+                        name: 'Toronto',
+                        id: 3
+                    },
+                    {
+                        name: 'Amsterdam',
+                        id: 5
+                    },
+                    {
+                        name: 'Paris',
+                        id: 6
+                    },
+                    {
+                        name: 'Barselona',
+                        id: 7
+                    },
+                    {
+                        name: 'Berlin',
+                        id: 8
+                    }
+                ]
 
             }
         },
@@ -36,7 +70,23 @@
             console.log(this.$route.params)
             this.loggedIn = window.loggedIn;
                 HTTP.get(`http://localhost:8090/countries/${this.$route.params.id}`)
-                .then(response => {this.userdata = response.data, this.isLoading = false;
+                .then(response => {
+                    this.userdata = response.data;
+                    this.isLoading = false;
+                    setTimeout(() => {
+
+                        $('.cities a').each((index, element) => {
+                            $(element).removeAttr('href');
+                        });
+
+                        $('.cities a').click((event) => {
+                            let html = $(event.target).html().trim();
+                            let city = this.cities.find((tempCity) => tempCity.name === html);
+                            if(city){
+                                this.$router.push('/countries/' + this.$route.params.id + '/cities/');
+                            }
+                        })
+                    }, 100);
                 })
         },
     };
@@ -66,45 +116,8 @@
                 <tab name="Hakkında">
                     <div v-html="userdata.about"></div>
                 </tab>
-                <tab name="Şehirler">
-                    <table class="city" style="width:100%" >
-                        <tr class="city">
-                            <td class="city"><router-link :to="CitiesDetails"> NewYork</router-link></td>
-                            <td class="city">Las Vegas</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city"><a href="">San Francisco</a></td>
-                            <td class="city">San Diego</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city"><a href="">Miami</a></td>
-                            <td class="city">Dallas</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Los Angeles</td>
-                            <td class="city">New Orleans</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Washington DC</td>
-                            <td class="city">Atlanta</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Chicago</td>
-                            <td class="city">Florida</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Austin</td>
-                            <td class="city">San Antonio</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Phoenix</td>
-                            <td class="city">Indianapolis</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Sacramento</td>
-                            <td class="city">California</td>
-                        </tr>
-                    </table>
+                <tab name="Şehirler" class="cities">
+                    <div v-html="userdata.cityInfo"></div>
                 </tab>
                 <tab name="Üniversiteler">
                     <div v-html="userdata.universitiesInfo"></div>
@@ -207,7 +220,7 @@
     .form-control:active, .form-control:focus {
         outline: none;
         box-shadow: none;
-        background-color: transparent;
+        background-color: transparent !important;
         color: white;
         border-top: none;
         border-left: none;
@@ -236,11 +249,11 @@
         letter-spacing: 3px;
         text-transform: uppercase;
         box-shadow: none;
-        background: transparent;
-        border-bottom: 1px solid white;
-        border-right: none;
-        border-top: none;
-        border-left: none;
+        background: transparent !important;
+        border-bottom: 1px solid white !important;
+        border-right: none !important;
+        border-top: none !important;;
+        border-left: none !important;;
         height: 54px;
         font-size: 11px;
         font-weight: 400;

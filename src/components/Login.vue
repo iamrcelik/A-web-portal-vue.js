@@ -29,6 +29,8 @@
                     localStorage.setItem('token', response.data.token);
                     window.loggedIn = true;
                     this.$router.push('/');
+                }, error => {
+                    this.$toastr('error', 'Kullanıcı adı veya şifre hatalı', 'Hatalı!');
                 })
             }
         }
@@ -45,7 +47,7 @@
             <div class="w3ls-form">
                 <form action="/" method="post">
                     <label>Kullanıcı Adı</label>
-                    <input type="input" v-model="username" name="username"  placeholder="Kullanıcı Adı" class="form-control" required/>
+                    <input type="input" v-model="username" name="username"  placeholder="Kullanıcı Adı" class="form-control"/>
                     <label>Şifre</label>
                     <input type="password" v-model="password" name="password" placeholder="Şifre" class="form-control" required />
                     <a href="#" class="pass">Şifremi unuttum!</a>
@@ -316,5 +318,8 @@ span.fa.fa-pinterest-p:hover {
         padding: 10px 15px;
     }
 }
+    input.invalid{
+        border-color: red;
+    }
 
 </style>

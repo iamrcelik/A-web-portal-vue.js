@@ -7,6 +7,14 @@
                 required: true,
             }
         },
+        data(){
+            return {
+                program:'',
+                country :'',
+                loggedIn:false,
+
+            }
+        },
         computed: {
             AllCountries() {
                 return `/countries`;
@@ -17,7 +25,13 @@
             Login(){
                 return `/auth`;
             }
-        }
+        },
+        methods: {
+            search :function () {
+                console.log(this.country);
+                this.$router.push('/search/' + this.program+'/'+this.userdata.name);
+            }
+        },
     }
 </script>
 
@@ -51,9 +65,9 @@
             <div class="login-form">
                 <div class="form-group ">
                     <i class="fa fa-graduation-cap"></i>
-                    <input type="text" class="form-control" placeholder="Ne Okumak İstersin?" id="okul">
+                    <input type="text" class="form-control" v-model="program" placeholder="Ne Okumak İstersin?" id="okul">
                 </div>
-                <button type="button" class="log-btn" >BUL</button>
+                <button type="button" class="log-btn" v-on:click="search" >BUL</button>
             </div>
         </div>
         <section id="numberlar">

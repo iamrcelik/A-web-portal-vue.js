@@ -6,9 +6,10 @@ import Cities from '../components/Cities.vue'
 import Register from '../components/Register.vue'
 import Login from '../components/Login.vue'
 import Profile from '../components/Profile.vue'
-import ProgramDetails from '../components/ProgramDetails.vue'
+import UniversityDetails from '../components/UniversityDetails.vue'
 import Search from '../components/Search.vue'
 import RegisterAuth from '../components/RegisterAuth.vue'
+import ProgramDetails from '../components/ProgramDetails.vue'
 export default {
     routes:[
         {
@@ -44,16 +45,20 @@ export default {
             component: Profile,
         },
         {
-            path: '/countries/:id/cities/programmes',
-            component: ProgramDetails,
+            path: '/countries/:id/cities/:id/universities',
+            component: UniversityDetails,
         },
         {
-            path: '/search/:term',
+            path: '/search/:term/:country',
             component : Search,
         },
         {
             path: '/activation',
             component: RegisterAuth,
+        },
+        {
+            path: '/countries/:id/cities/:id/universities/:id/programmes',
+            component: ProgramDetails,
         },
 
 

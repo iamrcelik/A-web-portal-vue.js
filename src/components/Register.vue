@@ -8,11 +8,17 @@
                 isLoading:true,
                 db:[],
                 username:'',
+                usernameValid: true,
                 email: '',
+                emailValid: true,
                 lastName:'',
+                lastNameValid: true,
                 firstName:'',
+                firstNameValid: true,
                 password: '',
-                passwordAgain: ''
+                passwordValid: true,
+                passwordAgain: '',
+                passwordAgainValid: true,
             }
         },
         computed:{
@@ -31,6 +37,37 @@
         },
         methods: {
             register:  function(event){
+                if(!this.username){
+                    this.usernameValid = false;
+                } else {
+                    this.usernameValid = true;
+                }
+                if(!this.email){
+                    this.emailValid = false;
+                } else {
+                    this.emailValid = true;
+                }
+                if(!this.lastName){
+                    this.lastNameValid = false;
+                } else {
+                    this.lastNameValid = true;
+                }
+                if(!this.firstName){
+                    this.firstNameValid = false;
+                } else {
+                    this.firstNameValid = true;
+                }
+                if(!this.password){
+                    this.passwordValid = false;
+                } else {
+                    this.passwordValid = true;
+                }
+                if(!this.passwordAgain){
+                    this.passwordAgainValid = false;
+                } else {
+                    this.passwordAgainValid = true;
+                }
+
                 if(this.password !== this.passwordAgain)
                     return;
 
@@ -44,7 +81,8 @@
                     this.username = response.data.username;
                     this.$router.push('/activation');
                     this.$toastr('warning', 'Sistemimize Giriş Yapabilmeniz için Mailinize Gönderilen Aktivasyon Kodu ile hesabınızı aktifleştirmeniz gerekmektedir. ', 'Merhaba');
-                })
+                },error => {
+                    this.$toastr('error', 'Bu alanlar boş geçilemez!', 'Hatalı!');})
             }
         }
     }
@@ -59,18 +97,25 @@
             <h2>KAYIT OL | <router-link :to="Login">GİRİŞ YAP</router-link></h2>
             <div class="w3ls-form">
                 <form action="/" method="post">
-                    <label>Kullanıcı Adı</label>
-                    <input type="input" v-model="username" name="userName" placeholder="Kullanıcı Adı" class="form-control" />
-                    <label>İsİm</label>
-                    <input type="input" v-model="firstName" name="firstName" placeholder="İsim" class="form-control" />
-                    <label>Soyİsİm</label>
-                    <input type="input" v-model="lastName" name="lastName" placeholder="Soyisim" class="form-control" />
-                    <label>Email</label>
-                    <input type="email" v-model="email" name="email" placeholder="Email" class="form-control" />
-                    <label>Şİfre</label>
-                    <input type="password" v-model="password" name="password" placeholder="Şifre" class="form-control" />
-                    <label>Şİfre(Tekrar)</label>
-                    <input type="password" v-model="passwordAgain" name="password-repeat" placeholder="Şifre (tekrar)" class="form-control" />
+                    <label>Kullanıcı Adı *</label>
+                    <span style="color: red;" v-show="errors.has('userName:required')">Kullanıcı Adı Zorunlu!</span>
+                    <input type="input" v-model="username" name="userName" placeholder="Kullanıcı Adı" class="form-control" v-bind:class="{ valid: usernameValid, invalid: !usernameValid }"v-validate="{ required: true, }"/>
+                    <label>İsİm *</label>
+                    <span style="color: red;" v-show="errors.has('firstName:required')">İsim Zorunlu!</span>
+                    <input type="input" v-model="firstName" name="firstName" placeholder="İsim" class="form-control" v-bind:class="{ valid: firstNameValid, invalid: !firstNameValid }"v-validate="{ required: true }"/>
+                    <label>Soyİsİm *</label>
+                    <span style="color: red;" v-show="errors.has('lastName:required')">Soyisim Zorunlu!</span>
+                    <input type="input" v-model="lastName" name="lastName" placeholder="Soyisim" class="form-control"v-bind:class="{ valid: lastNameValid, invalid: !lastNameValid }" v-validate="{ required: true, }"/>
+                    <label>Email *</label>
+                    <span style="color: red;" v-show="errors.has('email:required')">Email Zorunlu!</span>
+                    <span style="color: red;" v-show="errors.has('email:email')">Email Hatalı!</span>
+                    <input type="email" v-model="email" name="email" placeholder="Email" class="form-control" v-bind:class="{ valid: emailValid, invalid: !emailValid }" v-validate="{ required: true, email: true, regex: '[0-9]' }"/>
+                    <label>Şİfre *</label>
+                    <span style="color: red;" v-show="errors.has('password:required')">Şifre Zorunlu!</span>
+                    <input type="password" v-model="password" name="password" placeholder="Şifre" class="form-control" v-bind:class="{ valid: passwordValid, invalid: !passwordValid }" v-validate="{ required: true, }"/>
+                    <label>Şİfre(Tekrar) *</label>
+                    <span style="color: red;" v-show="errors.has('password-repeat:required')">Şifre Tekrar Zorunlu!</span>
+                    <input type="password" v-model="passwordAgain" name="password-repeat" placeholder="Şifre (tekrar)" class="form-control" v-bind:class="{ valid: passwordAgainValid, invalid: !passwordAgainValid }" v-validate="{ required: true, }"/>
                     <a href="#" class="pass">Şifremi Unuttum!</a>
                     <button class="btn btn-primary btn-block" type="button" v-on:click="register">KAYIT OL</button>
                 </form>
@@ -338,6 +383,9 @@
         input[type="text"] {
             padding: 10px 15px;
         }
+    }
+    input.invalid{
+        border-color: red;
     }
 
 </style>
