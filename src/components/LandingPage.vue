@@ -35,21 +35,24 @@
                 location.href='/';
             },
             search :function () {
-                if(!this.program){
+                if(!this.program && !this.country){
                     this.aValid = false;
-                    this.$toastr('error', 'Program Boş Olamaz!', 'Hatalı!');
-                    return;
-                } else {
-                    this.aValid = true;
-                }
-                if(!this.country){
                     this.countryValid = false;
-                    this.$toastr('error', 'Ülke Boş Olamaz!', 'Hatalı!');
+                    this.$toastr('error', 'Program ve Ülke Boş Olamaz!', 'Hatalı!');
                     return;
-                } else {
-                    this.countryValid = true;
                 }
-                this.$router.push('/search/' + this.program+'/'+this.country);
+                if(this.program && this.country){
+                    this.$router.push('/search/' + this.program+ '/' + this.country);
+                }
+                if(this.program && !this.country){
+                    this.$router.push('/search/' + this.program);
+                }
+                if(!this.program && this.country){
+                    this.$router.push('/search/' + this.country);
+                }
+
+
+
             }
         },
 

@@ -11,6 +11,8 @@
             return {
                 isLoading:true,
                 userdata:[],
+                program:'',
+                country:'',
             }
         },
         components: {
@@ -46,7 +48,11 @@
                 localStorage.removeItem('token')
                 window.loggedIn = false;
                 location.href='/';
-            }
+            },
+            search :function () {
+                console.log(this.country);
+                this.$router.push('/search/' + this.program+'/'+this.userdata[0].universities[0].name);
+            },
         }
     };
 
@@ -91,9 +97,9 @@
                 <div class="login-form">
                     <div class="form-group ">
                         <i class="fa fa-graduation-cap"></i>
-                        <input type="text" class="form-control" placeholder="Ne Okumak İstersin?" id="okul">
+                        <input type="text" class="form-control" placeholder="Ne Okumak İstersin?" id="okul" v-model="program">
                     </div>
-                    <button type="button" class="log-btn" >HEMEN BUL</button>
+                    <button type="button" class="log-btn"  v-on:click="search">HEMEN BUL</button>
                 </div>
             </form>
         </div>

@@ -7,8 +7,9 @@ import VueCarousel from 'vue-carousel';
 import routerOptions from './router/router'
 import Tabs from 'vue-tabs-component';
 import VeeValidate from 'vee-validate';
+import VueNumeric from 'vue-numeric';
 
-
+Vue.use(VueNumeric);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueCarousel);

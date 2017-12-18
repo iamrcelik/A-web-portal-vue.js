@@ -10,7 +10,9 @@
                 loggedIn:false,
                 isLoading:true,
                 userdata:[],
-                options: null
+                options: null,
+                program:'',
+                country:'',
             }
         },
         components: {
@@ -22,6 +24,7 @@
             this.loggedIn = window.loggedIn;
             HTTP.get(`http://localhost:8090/countries/${this.$route.params.id}/cities`)
                 .then(response => {this.userdata = response.data, this.isLoading = false;
+                console.log(response)
                 console.log(this.$route.params.id)
                     console.log(response)
                 })
@@ -45,13 +48,17 @@
                 localStorage.removeItem('token')
                 window.loggedIn = false;
                 location.href='/';
-            }
+            },
+            search :function () {
+                console.log(this.country);
+                this.$router.push('/search/' + this.program+'/'+this.userdata[0].name);
+            },
         }
     };
 </script>
 
 <template>
-    <section class="alan" :style='{ backgroundImage: `url(${userdata[0].landingPhoto})` }'>
+    <section class="alan" style= "background-image: url(http://appic.works/wp-content/uploads/2017/12/newyorkcity.jpg)" >
         <nav class="navbar navbar-expand-sm navbar-light">
             <router-link to="/" class="navbar-brand"><img src="http://localhost:8080/src/assets/jf-logos-03.png"> </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,9 +95,9 @@
                 <div class="login-form">
                     <div class="form-group ">
                         <i class="fa fa-graduation-cap"></i>
-                        <input type="text" class="form-control" placeholder="Ne Okumak İstersin?" id="okul">
+                        <input type="text" class="form-control" placeholder="Ne Okumak İstersin?" id="okul" v-model="program">
                     </div>
-                    <button type="button" class="log-btn" >HEMEN BUL</button>
+                    <button type="button" class="log-btn" v-on:click="search">HEMEN BUL</button>
                 </div>
             </form>
         </div>

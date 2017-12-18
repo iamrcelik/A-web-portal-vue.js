@@ -32,7 +32,10 @@
                 }, error => {
                     this.$toastr('error', 'Kullanıcı adı veya şifre hatalı', 'Hatalı!');
                 })
-            }
+            },
+            lostpassword :function () {
+                this.$router.push('/lostpassword/');
+            },
         }
     }
 </script>
@@ -50,7 +53,7 @@
                     <input type="input" v-model="username" name="username"  placeholder="Kullanıcı Adı" class="form-control"/>
                     <label>Şifre</label>
                     <input type="password" v-model="password" name="password" placeholder="Şifre" class="form-control" required />
-                    <a href="#" class="pass">Şifremi unuttum!</a>
+                    <a href="#" class="pass"v-on:click="lostpassword">Şifremi unuttum!</a>
                     <button class="btn btn-primary btn-block" type="button" v-on:click="login">GİRİŞ YAP!</button>
                 </form>
             </div>

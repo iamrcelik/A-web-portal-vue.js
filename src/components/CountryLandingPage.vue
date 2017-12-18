@@ -3,7 +3,7 @@
         name: 'CountryLandingPage',
         props: {
             userdata: {
-                type: Object,
+                type: Array,
                 required: true,
             }
         },

@@ -10,6 +10,9 @@ import UniversityDetails from '../components/UniversityDetails.vue'
 import Search from '../components/Search.vue'
 import RegisterAuth from '../components/RegisterAuth.vue'
 import ProgramDetails from '../components/ProgramDetails.vue'
+import Suggestion from '../components/Suggestion.vue'
+import LostPassword from '../components/LostPassword.vue'
+import ResetPassword from '../components/ResetPassword.vue'
 export default {
     routes:[
         {
@@ -53,12 +56,32 @@ export default {
             component : Search,
         },
         {
+            path: '/search/:term/',
+            component : Search,
+        },
+        {
+            path: '/search/:country/',
+            component : Search,
+        },
+        {
             path: '/activation',
             component: RegisterAuth,
         },
         {
             path: '/countries/:id/cities/:id/universities/:id/programmes',
             component: ProgramDetails,
+        },
+        {
+            path: '/suggestion',
+            component: Suggestion,
+        },
+        {
+            path: '/lostpassword',
+            component: LostPassword,
+        },
+        {
+            path: '/reset',
+            component: ResetPassword,
         },
 
 
