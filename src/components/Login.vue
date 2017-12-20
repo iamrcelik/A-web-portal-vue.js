@@ -46,6 +46,7 @@
 
         <!---728x90--->
         <div class="wrapper">
+            <router-link to="/" class="navbar-brand"><img src="/src/assets/jf-logos-03.png"> </router-link><br><br>
             <h2>GİRİŞ YAP | <router-link :to="Register">KAYIT OL</router-link></h2>
             <div class="w3ls-form">
                 <form action="/" method="post">

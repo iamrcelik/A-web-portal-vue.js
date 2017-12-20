@@ -13,6 +13,9 @@
         },
         methods:{
             lost() {
+                if(this.email){
+                    this.$toastr('Success', 'Lütfen Mailinizi Kontrol Edin!', 'Mail!');
+                }
                 if(!this.email){
                     this.emailValid = false;
                 } else {
@@ -24,7 +27,10 @@
                     this.$router.push('/reset');
 
                 },error => {
-                    this.$toastr('error', 'Bu mail boş geçilemez!', 'Hatalı!');})
+                    if (this.email){
+                        this.$toastr('error', 'Email Geçersiz!', 'Hatalı!');
+                    }else{this.$toastr('error', 'Bu mail boş geçilemez!', 'Hatalı!');}
+                    })
             }
         },
 
@@ -35,8 +41,10 @@
     <div class="agile-login" style="background-image: url(/src/assets/back2.jpg); background-size: cover; min-height: 100vh;">
         <!---728x90--->
 
+
         <!---728x90--->
         <div class="wrapper">
+            <router-link to="/" class="navbar-brand"><img src="/src/assets/jf-logos-03.png"> </router-link><br><br>
             <h2>Şifremi Unuttum</h2>
             <div class="w3ls-form">
                 <form action="/" method="post">

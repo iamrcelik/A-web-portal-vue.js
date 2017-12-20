@@ -50,6 +50,10 @@
                 location.href='/';
             },
             search :function () {
+                if(!this.program){
+                    this.$toastr('error', 'Program Boş Olamaz!', 'Hatalı!');
+                    return;
+                }
                 console.log(this.country);
                 this.$router.push('/search/' + this.program+'/'+this.userdata[0].name);
             },

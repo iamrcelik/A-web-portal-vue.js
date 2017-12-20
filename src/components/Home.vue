@@ -53,8 +53,7 @@
             <section class="mbr-section content4 cid-qBlfyNkGo0" id="content4-l" data-rv-view="133">
 
                             <h2 class="align-center pb-3 mbr-fonts-style display-2" STYLE="text-align: center !important;"><strong>ÜLKELER</strong></h2>
-                            <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
-                                S<span style="font-style: italic;">hape </span><span style="font-style: italic;">your </span><em>future web project </em><span style="font-style: italic;">with </span><span style="font-style: italic;">sharp </span><span style="font-style: italic;">design </span><span style="font-style: italic;">and </span><span style="font-style: italic;">refine </span><span style="font-style: italic;">coded </span><span style="font-style: italic;">functions.</span></h3>
+                            <h3 class="align-center pb-3 mbr-fonts-style display-4"> Nerede okumak istediğinden emin değil misin? <strong>İşte en popüler aramalar!</strong></h3>
                 <Countries v-for="country in db"
                            key="Countries.id"
                            :country="country"></Countries>
@@ -66,8 +65,8 @@
         <div class="highlight-clean">
             <div class="container">
                 <div class="intro">
-                    <h2 class="text-center" style="padding-top: 50px"><strong>UZMANLIK ALANLARI</strong></h2>
-                    <p class="text-center" style="padding-bottom: 50px">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+                    <h2 class="text-center" style="padding-top: 50px"><strong>UZMANLIK ALANLARI</strong></h2><br>
+                    <p class="align-center pb-3 mbr-fonts-style display-4">Ne okumak istediğinden emin değil misin? <strong>Buraya bir göz at!</strong></p>
                 </div>
             </div>
         </div>

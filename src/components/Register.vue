@@ -94,6 +94,7 @@
 
         <!---728x90--->
         <div class="wrapper">
+            <router-link to="/" class="navbar-brand"><img src="/src/assets/jf-logos-03.png"> </router-link><br><br>
             <h2>KAYIT OL | <router-link :to="Login">GİRİŞ YAP</router-link></h2>
             <div class="w3ls-form">
                 <form action="/" method="post">
@@ -116,8 +117,7 @@
                     <label>Şİfre(Tekrar) *</label>
                     <span style="color: red;" v-show="errors.has('password-repeat:required')">Şifre Tekrar Zorunlu!</span>
                     <input type="password" v-model="passwordAgain" name="password-repeat" placeholder="Şifre (tekrar)" class="form-control" v-bind:class="{ valid: passwordAgainValid, invalid: !passwordAgainValid }" v-validate="{ required: true, }"/>
-                    <a href="#" class="pass">Şifremi Unuttum!</a>
-                    <button class="btn btn-primary btn-block" type="button" v-on:click="register">KAYIT OL</button>
+                    <button class="btn btn-primary btn-block" type="button" v-on:click="register" style="margin-left: 1px;">KAYIT OL</button>
                 </form>
             </div>
         </div>

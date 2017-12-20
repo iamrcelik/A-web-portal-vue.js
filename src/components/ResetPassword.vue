@@ -8,6 +8,7 @@
                 keyValid:true,
                 password:null,
                 emailValid:true,
+                passwordValid:true,
             }
         },
         created(){
@@ -26,7 +27,7 @@
                 } else {
                     this.keyValid = true;
                 }
-                if(!this.email){
+                if(!this.password){
                     this.passwordValid = false;
                 } else {
                     this.passwordValid = true;
@@ -49,6 +50,7 @@
 
         <!---728x90--->
         <div class="wrapper">
+            <router-link to="/" class="navbar-brand"><img src="/src/assets/jf-logos-03.png"> </router-link><br><br>
             <h2>Şifre Sıfırla</h2>
             <div class="w3ls-form">
                 <form action="/" method="post">
