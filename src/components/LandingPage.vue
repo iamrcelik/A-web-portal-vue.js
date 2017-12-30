@@ -118,16 +118,6 @@
         margin-top: 70px;
     }
 
-    .nav-item{
-        position: relative;
-    }
-    .dropdown-menu.show{
-        background-color: transparent;
-        border: none;
-    }
-    .nav-item a, a.nav-item{
-        color:white;
-    }
 
     @media screen and (max-width: 768px) {
         .header-pic img{

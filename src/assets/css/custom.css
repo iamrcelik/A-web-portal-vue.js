@@ -593,3 +593,15 @@ span.fa.fa-pinterest-p:hover {
 input.invalid{
     border-color: red;
 }
+
+
+.nav-item{
+    position: relative;
+}
+.dropdown-menu.show{
+    background-color: transparent;
+    border: none;
+}
+.nav-item a, a.nav-item{
+    color:white;
+}
