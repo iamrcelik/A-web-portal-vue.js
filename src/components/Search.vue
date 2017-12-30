@@ -2,6 +2,7 @@
     import {HTTP} from '../services/http-common'
     import AppHeader from './AppHeader.vue'
     import Foota from './Foota.vue'
+
     export default {
         name: 'Search',
         components: {
@@ -11,40 +12,33 @@
 
 
         },
-        data(){
+        data() {
             return {
-                universities:[],
-                universitiess:[],
-                universitiesss:[],
+                universities: [],
+                universitiess: [],
+                universitiesss: [],
 
             }
         },
-        created(){
-            console.log(this.$route.params);
-            if(this.$route.params.term){
-                if(this.$route.params.country){
-                HTTP.get(`http://localhost:8090/search?p=${this.$route.params.term}&q=${this.$route.params.country}`
+        created() {
+            let tempParams = "";
+
+            if (this.$route.query.p) {
+                tempParams = "p=" + this.$route.query.p;
+            }
+            if (this.$route.query.q) {
+                if(tempParams)
+                    tempParams += "&";
+                tempParams += "q=" + this.$route.query.q;
+            }
+
+            if(tempParams){
+                HTTP.get(`http://localhost:8090/search?${tempParams}`
                 ).then(response => {
-                    this.universities = response.data;
+                    this.universitiesss = response.data;
                     console.log(response)
                 })
-            }}
-            if(this.$route.params.term) {
-                if(!this.$route.params.country){
-                HTTP.get(`http://localhost:8090/search?p=${this.$route.params.term}`
-                ).then(response => {
-                    this.universitiess = response.data;
-                    console.log(response)
-                })
-            }}
-            if(this.$route.params.country) {
-                if(!this.$route.params.term){
-                HTTP.get(`http://localhost:8090/search?q=${this.$route.params.country}`
-                ).then(response => {
-                this.universitiesss = response.data;
-                console.log(response)
-            })
-                }}
+            }
 
         },
     };

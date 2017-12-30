@@ -13,7 +13,7 @@
 </template>
 
 
-<style>
+<style scoped>
 .gtco-cover.gtco-cover-sm {
     height: 600px !important;
 }
@@ -83,7 +83,7 @@
     z-index: 10;
 }
 .gtco-cover .display-tc h1{
-    margin-top:19%;
+    margin-top: 100px;
     font-size: 59px;
     line-height: 1.5;
     font-weight: 300;

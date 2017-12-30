@@ -57,6 +57,7 @@
                 <Countries v-for="country in db"
                            key="Countries.id"
                            :country="country"></Countries>
+                <div class="clearfix"></div>
             </section>
             <div class="clearfix"></div>
         </section>
@@ -76,8 +77,3 @@
         <foota></foota>
     </section>
 </template>
-<style>
-    .okullar-header{
-        padding: 100px 0;
-    }
-</style>

@@ -15,7 +15,8 @@
                     <img src="http://appic.works/wp-content/uploads/2017/10/oxford.png" id="image1"/>
                     <div class="top-left"><p style="color: white">OXFORD UNIVERSITY</p></div>
                     <div class="bottom-right">
-                        <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> İNGİLTERE</i>
+                        <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> </i>
+                        <span class="text">İNGİLTERE</span>
                     </div>
                     </a>
                 </div>
@@ -23,14 +24,16 @@
                     <img src="http://appic.works/wp-content/uploads/2017/10/toronto.jpg" id="image2"/>
                     <div class="top-left"><p style="color: white">CAMBRİDGE UNIVERSITY</p></div>
                     <div class="bottom-right">
-                        <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> İNGİLTERE</i>
+                        <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> </i>
+                        <span class="text">İNGİLTERE</span>
                     </div>
                 </div>
                 <div class="element2">
                     <img src="http://appic.works/wp-content/uploads/2017/10/toronto.jpg" id="image3"/>
                     <div class="top-left"><p style="color: white">TORONTO UNIVERSITY</p></div>
                     <div class="bottom-right">
-                        <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> KANADA</i>
+                        <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> </i>
+                        <span class="text">KANADA</span>
                     </div>
                 </div>
             </div>
@@ -39,14 +42,16 @@
                         <img src="http://appic.works/wp-content/uploads/2017/10/mıtt.jpg" id="image4"/>
                         <div class="top-left"><p style="color: white">MIT</p></div>
                         <div class="bottom-right">
-                            <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> AMERİKA</i>
+                            <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> </i>
+                            <span class="text">AMERİKA</span>
                         </div>
                     </div>
                     <div class="element4">
                         <img src="http://appic.works/wp-content/uploads/2017/10/cornell.jpg" id="image5"/>
                         <div class="top-left"><p style="color: white">CORNELL UNIVERSITY</p></div>
                         <div class="bottom-right">
-                            <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> AMERİKA</i>
+                            <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> </i>
+                            <span class="text">AMERİKA</span>
                         </div>
                     </div>
                 </div>
@@ -55,15 +60,17 @@
                         <img src="http://appic.works/wp-content/uploads/2017/10/miami.jpg" id="image6"/>
                         <div class="top-left"><p style="color: white">MIAMI UNIVERSITY</p></div>
                         <div class="bottom-right">
-                            <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> AMERİKA</i>
+                            <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> </i>
+                            <span class="text">AMERİKA</span>
                         </div>
                     </div>
                     <div class="element6">
                         <img src="http://appic.works/wp-content/uploads/2017/10/ufc.jpg" id="image7"/>
                         <div class="top-left"><p style="color: white">UNIVERSITY CENTRAL OF FLORIDA</p>
                         </div>
-                        <div class="bottom-right">
-                            <i class="fa fa-map-marker" aria-hidden="true" style="color: white"> AMERİKA</i>
+                        <div class="bottom-right" style="color: white">
+                            <i class="fa fa-map-marker" aria-hidden="true" > </i>
+                            <span class="text">AMERİKA</span>
                         </div>
 
                     </div>
@@ -73,7 +80,12 @@
     </div>
 </section>
 </template>
-<style>
+<style scoped>
+
+    .okullar-header{
+        margin-top:120px;
+    }
+
   h2{
       font-size: 50px;
   }
@@ -170,6 +182,12 @@
      right: 25px;
      bottom: 425px;
  }
+
+    .bottom-right .text{
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+    }
 
 
  #image2{

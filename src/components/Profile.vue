@@ -238,7 +238,7 @@
                                     <div class="form-group">
                                         <label for="inputDesProg">İstenilen Dil</label>
                                         <span style="color: red;" v-show="errors.has('language:required')">Dil Zorunlu!</span>
-                                        <select v-model="language" v-bind:class="{ valid: languageValid, invalid: !languageValid }" v-validate="{ required: true, }">
+                                        <select class="form-control" v-model="language" v-bind:class="{ valid: languageValid, invalid: !languageValid }" v-validate="{ required: true, }">
                                             <option value="" disabled selected>Dil</option>
                                             <option value="ENGLISH">İngilizce</option>
                                             <option value="GERMAN">Almanca</option>
@@ -249,7 +249,7 @@
                                     <div class="form-group">
                                         <label for="inputDesProg">İstenilen Süre</label>
                                         <span style="color: red;" v-show="errors.has('duration:required')">Kullanıcı Adı Zorunlu!</span>
-                                        <select v-model="duration" v-bind:class="{ valid: durationValid, invalid: !durationValid }" v-validate="{ required: true, }">
+                                        <select class="form-control" v-model="duration" v-bind:class="{ valid: durationValid, invalid: !durationValid }" v-validate="{ required: true, }">
                                             <option value="" disabled selected>Süre</option>
                                             <option value="LESS_THAN_A_YEAR">6 ay</option>
                                             <option value="BETWEEN_ONE_AND_TWO">12 ay</option>
@@ -280,11 +280,25 @@
 
     </section>
 </template>
-<style>
+<style scoped>
     .profil{border: 1px solid black;
         padding: 20px;
         margin-top: 10px;}
     .container h1 {
         margin-top: 30px;
+    }
+    label{
+        text-align: left;
+        padding-left:0;
+    }
+    .form-control,
+    .form-control:focus,
+    .form-control:active{
+        background: #fff !important;
+        color:#363636 !important;
+    }
+
+    .form-control:disabled{
+        background-color: #f5f5f5 !important;
     }
 </style>

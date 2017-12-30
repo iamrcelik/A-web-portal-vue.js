@@ -52,15 +52,7 @@ export default {
             component: UniversityDetails,
         },
         {
-            path: '/search/:term/:country',
-            component : Search,
-        },
-        {
-            path: '/search/:term/',
-            component : Search,
-        },
-        {
-            path: '/search/:country/',
+            path: '/search',
             component : Search,
         },
         {

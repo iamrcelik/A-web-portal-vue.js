@@ -62,7 +62,7 @@
     </nav>
     </section>
 </template>
-<style>
+<style scoped>
     #menu{
         width: 100%;
         height: 300px;

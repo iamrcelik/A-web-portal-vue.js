@@ -16,7 +16,7 @@
     }
 </script>
 <template>
-    <section class="ülkeler">
+    <section class="ulkeler">
             <div class="container">
                 <div class="media-container-row">
                     <div class="card p-3 col-12 col-md-6 col-lg-3">
@@ -44,7 +44,7 @@
     </section>
 </template>
 
-<style>
+<style scoped>
     .card{
         float: left !important;
     }

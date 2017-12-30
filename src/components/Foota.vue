@@ -70,7 +70,7 @@
 </template>
 
 
-<style>
+<style scoped>
     #gtco-footer .gtco-footer-links {
         padding: 0;
         margin: 0 0 20px 0;
@@ -126,7 +126,7 @@
         color: #b3b3b3;
         padding-top: 3em;
         margin-top: 3em;
-        border-top: 1px solid #f2f2f2;
+        border-top: 1px solid #09C6AB;
     }
     @media screen and (max-width: 768px) {
         #gtco-footer .copyright .pull-left,
@@ -137,6 +137,7 @@
     }
     #gtco-footer .copyright .block {
         display: block;
+        color:#363636;
     }
      #gtco-footer{
          padding: 7em 0;

@@ -101,7 +101,10 @@
     <!----  </router-link> --->
   </template>
 
-  <style>
+  <style scoped>
+      label{
+          color:#363636;
+      }
       .round{
           text-align: center;
       }
