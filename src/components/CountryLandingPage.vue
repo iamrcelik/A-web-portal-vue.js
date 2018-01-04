@@ -28,8 +28,9 @@
         },
         methods: {
             search :function () {
+
                 console.log(this.country);
-                this.$router.push('/search/' + this.program+'/'+this.userdata.name);
+                this.$router.push('/search?p=' + this.program+ '&q=' + this.userdata.name);
             }
         },
     }

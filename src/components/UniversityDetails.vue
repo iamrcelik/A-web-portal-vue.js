@@ -51,7 +51,7 @@
             },
             search :function () {
                 console.log(this.country);
-                this.$router.push('/search/' + this.program+'/'+this.userdata[0].universities[0].name);
+                this.$router.push('/search?p=' + this.program+ '&q=' + this.userdata[0].universities[0].name);
             },
         }
     };

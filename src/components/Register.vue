@@ -82,7 +82,7 @@
                     this.$router.push('/activation');
                     this.$toastr('warning', 'Sistemimize Giriş Yapabilmeniz için Mailinize Gönderilen Aktivasyon Kodu ile hesabınızı aktifleştirmeniz gerekmektedir. ', 'Merhaba');
                 },error => {
-                    this.$toastr('error', 'Bu alanlar boş geçilemez!', 'Hatalı!');})
+                    this.$toastr('error', 'Alanlar boş geçilemez!', 'Hatalı!');})
             }
         }
     }

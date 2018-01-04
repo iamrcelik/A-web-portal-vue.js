@@ -124,6 +124,24 @@
                 } else {
                     this.durationValid = true;
                 }
+                if(!this.language){
+                    this.$toastr('error', ' Dil seçimi boş geçilemez.', 'Merhaba!');
+                }
+                if(!this.ielts){
+                    this.$toastr('error', ' İelts boş geçilemez.', 'Merhaba!');
+                }
+                if(!this.maxPrice){
+                    this.$toastr('error', ' Fiyat seçimi boş geçilemez.', 'Merhaba!');
+                }
+                if(!this.interestCountry){
+                    this.$toastr('error', ' Ülke seçimi boş geçilemez.', 'Merhaba!');
+                }
+                if(!this.duration){
+                    this.$toastr('error', ' Süre seçimi boş geçilemez.', 'Merhaba!');
+                }
+                if(!this.interestProgram){
+                    this.$toastr('error', ' Program seçimi boş geçilemez.', 'Merhaba!');
+                }
                 if(this.language && this.ielts && this.maxPrice && this.interestCountry && this.interestProgram && this.duration){
                     this.$router.push(`/suggestion/`);
                     }

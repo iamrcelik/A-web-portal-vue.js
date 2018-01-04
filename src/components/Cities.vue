@@ -41,7 +41,7 @@
             },
             ProgramDetails() {
                     return `/countries/${this.userdata[0].id}/cities/${this.userdata[0].id}/universities`;
-                }
+                },
             },
         methods:{
             logOut(){
@@ -55,7 +55,7 @@
                     return;
                 }
                 console.log(this.country);
-                this.$router.push('/search/' + this.program+'/'+this.userdata[0].name);
+                this.$router.push('/search?p=' + this.program+ '&q=' + this.userdata[0].name);
             },
         }
     };
