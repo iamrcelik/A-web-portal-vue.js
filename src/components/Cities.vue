@@ -63,9 +63,9 @@
 
 <template>
     <div>
-    <section class="alan" style= "background-image: url(http://appic.works/wp-content/uploads/2017/12/newyorkcity.jpg)" >
+    <section class="alan" :style='{ backgroundImage: `url(${userdata[0].landingPhoto})` }' >
         <nav class="navbar navbar-expand-sm navbar-light">
-            <router-link to="/" class="navbar-brand"><img src="http://localhost:8080/src/assets/jf-logos-03.png"> </router-link>
+            <router-link to="/" class="navbar-brand"><img src="http://appic.works/wp-content/uploads/2018/01/abroadstation.png  "> </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

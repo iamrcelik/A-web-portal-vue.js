@@ -13,6 +13,7 @@ import ProgramDetails from '../components/ProgramDetails.vue'
 import Suggestion from '../components/Suggestion.vue'
 import LostPassword from '../components/LostPassword.vue'
 import ResetPassword from '../components/ResetPassword.vue'
+import ProgramsDetails from '../components/ProgramsDetails.vue'
 export default {
     routes:[
         {
@@ -75,6 +76,10 @@ export default {
             path: '/reset',
             component: ResetPassword,
         },
+        {
+            path: '/universities/:id',
+            component: ProgramsDetails,
+        }
 
 
     ],

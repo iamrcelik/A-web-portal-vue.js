@@ -36,8 +36,10 @@
             if(tempParams){
                 HTTP.get(`http://localhost:8090/search?${tempParams}`
                 ).then(response => {
+                    console.log(response);
+
                     this.universitiesss = response.data;
-                    console.log(response)
+
                 })
             }
 
@@ -46,7 +48,7 @@
         },
         methods: {
             universityPage :function () {
-                this.$router.push(`/countries/${this.universitiesss[0].id}/cities/${this.universitiesss[0].id}/universities`)     },
+                this.$router.push(`/universities/${this.universitiesss[0].id}`)     },
         }
     };
 

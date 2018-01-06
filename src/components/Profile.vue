@@ -226,7 +226,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="inputExp">Fiyat</label>
-                                        <span style="color: red;" v-show="errors.has('maxPrice:required')">Kullanıcı Adı Zorunlu!</span>
+                                        <span style="color: red;" v-show="errors.has('maxPrice:required')">Fiyat Zorunlu!</span>
                                         <vue-numeric :read-only = 'false' seperator="." v-model="maxPrice" class="form-control" v-bind:class="{ valid: maxPriceValid, invalid: !maxPriceValid }" v-validate="{ required: true, }"></vue-numeric>
                                     </div>
                                 </div>

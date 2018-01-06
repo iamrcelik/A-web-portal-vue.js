@@ -6,7 +6,7 @@
                 <div class="col-md-4">
                     <div class="gtco-widget">
                         <h3>Hakkımızda</h3>
-                        <p>justForeign, yerel dilde içerik yazmaktan ve çeşitli ülkelerden öğrencilere yönelik sosyal medya etkinlikleri yönetmekten sorumlu, belirli bir ülke odaklı editörlere ve dijital pazarlama uzmanlarına sahiptir. Türk öğrenciler için sanal danışmanlık hizmeti sunar</p>
+                        <p>AbroadStation, yerel dilde içerik yazmaktan ve çeşitli ülkelerden öğrencilere yönelik sosyal medya etkinlikleri yönetmekten sorumlu, belirli bir ülke odaklı editörlere ve dijital pazarlama uzmanlarına sahiptir. Türk öğrenciler için sanal danışmanlık hizmeti sunar</p>
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@
                         <h3>Get In Touch</h3>
                         <ul class="gtco-quick-contact">
                             <li><a href="#"><i class="fa fa-phone"></i> +0545 393 62 09</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@justForeign.com</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> info@AbroadStation.com</a></li>
 
                         </ul>
                     </div>

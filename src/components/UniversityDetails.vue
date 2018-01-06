@@ -63,7 +63,7 @@
     <div>
     <section class="alan" :style='{ backgroundImage: `url(${userdata[0].universities[0].landingPhoto})` }'>
         <nav class="navbar navbar-expand-sm navbar-light">
-            <router-link to="/" class="navbar-brand"><img src="http://localhost:8080/src/assets/jf-logos-03.png"> </router-link>
+            <router-link to="/" class="navbar-brand"><img src="http://localhost:8080/src/assets/abroadstation.png"> </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -143,46 +143,6 @@
                 </tab>
                 <tab name="Hakkında">
                     <div v-html="userdata[0].universities[0].about"></div>
-                </tab>
-                <tab name="Üniversiteler">
-                    <table class="city" style="width:100%" >
-                        <tr class="city">
-                            <td class="city"><router-link :to="Program">NewYork</router-link></td>
-                            <td class="city">Las Vegas</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city"><a href="">San Francisco</a></td>
-                            <td class="city">San Diego</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city"><a href="">Miami</a></td>
-                            <td class="city">Dallas</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Los Angeles</td>
-                            <td class="city">New Orleans</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Washington DC</td>
-                            <td class="city">Atlanta</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Chicago</td>
-                            <td class="city">Florida</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Austin</td>
-                            <td class="city">San Antonio</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Phoenix</td>
-                            <td class="city">Indianapolis</td>
-                        </tr>
-                        <tr class="city">
-                            <td class="city">Sacramento</td>
-                            <td class="city">California</td>
-                        </tr>
-                    </table>
                 </tab>
             </tabs>
         </div>

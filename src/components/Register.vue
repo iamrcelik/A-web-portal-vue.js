@@ -94,7 +94,7 @@
 
         <!---728x90--->
         <div class="wrapper">
-            <router-link to="/" class="navbar-brand"><img src="/src/assets/jf-logos-03.png"> </router-link><br><br>
+            <router-link to="/" class="navbar-brand"><img src="/src/assets/abroadstation.png"> </router-link><br><br><br><br>
             <h2>KAYIT OL | <router-link :to="Login">GİRİŞ YAP</router-link></h2>
             <div class="w3ls-form">
                 <form action="/" method="post">
