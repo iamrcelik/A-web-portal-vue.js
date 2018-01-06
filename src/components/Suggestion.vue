@@ -38,8 +38,12 @@ export default {
 <template>
     <div>
         <app-header></app-header>
+        <div>
+
+            <h1>Sizin İçin En Uygun Üniversiteler</h1>
+        </div>
         <div v-for="suggestion in suggestions">
-            <d class="container">
+            <div class="container">
             <div class="listed-school animated">
                 <div class="school-logo-wrap">
                         <img src="https://d1qy7wmw5fq66c.cloudfront.net/media/18633/uduquébecàchicoutimi.jpg/listing">
@@ -77,7 +81,7 @@ export default {
                     </div>
                 </div>
             </div>
-        </d>
+        </div>
         </div>
         <foota></foota>
     </div>
