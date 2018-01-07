@@ -31,7 +31,8 @@ export default {
 
 
         })
-    }
+    },
+
 }
 </script>
 
@@ -49,7 +50,7 @@ export default {
                         <img src="https://d1qy7wmw5fq66c.cloudfront.net/media/18633/uduquébecàchicoutimi.jpg/listing">
                 </div>
                 <br>
-                <h2><a href="/schools/masters-degree/université-du-québec-à-chicoutimi/?discipline=3" target="/schools/masters-degree/université-du-québec-à-chicoutimi/?discipline=3" title="Université du Québec à Chicoutimi" data-tracking="next-page">{{suggestion.universityName}}</a></h2>
+                <h2><a>{{suggestion.universityName}}</a></h2>
                 <h3><i data-icon="O"></i> {{suggestion.name}} , {{suggestion.duration}} Ay</h3>
                 <h3><i class="fa fa-map-marker" ></i> {{suggestion.countryName}}    </h3>
                 <div class="school-desc">
@@ -61,7 +62,7 @@ export default {
                         <li>
                             <i class="fa fa-trophy" aria-hidden="true"></i>
                             <span class="attribute-title">Üniversite Sıralaması</span>
-                            <span class="attribute-value">USD 7,911</span>
+                            <span class="attribute-value">123</span>
                         </li>
                         <li>
                              <i class="fa fa-money" aria-hidden="true"></i>

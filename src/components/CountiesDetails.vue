@@ -87,6 +87,9 @@
                             }
                         })
                     }, 100);
+                    $('html, body').animate({
+                        scrollTop: 1
+                    }, 500);
                 })
         },
     };

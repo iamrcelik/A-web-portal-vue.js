@@ -27,6 +27,9 @@
                 console.log(response)
                 console.log(this.$route.params.id)
                     console.log(response)
+                    $('html, body').animate({
+                        scrollTop: 1
+                    }, 500);
                 })
         },
         computed: {
@@ -57,6 +60,7 @@
                 console.log(this.country);
                 this.$router.push('/search?p=' + this.program+ '&q=' + this.userdata[0].name);
             },
+
         }
     };
 </script>

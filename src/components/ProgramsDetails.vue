@@ -10,8 +10,8 @@
         data() {
             return {
                 isLoading: true,
-                programs:[],
-                program:'',
+                university: { },
+                program: { },
             }
         },
         components: {
@@ -46,8 +46,11 @@
             this.loggedIn = window.loggedIn;
             HTTP.get(`http://localhost:8090/universities/${this.$route.params.id}`)
                 .then(response => {this.isLoading = false;
-                    this.programs = response.data;
-                    console.log(response)
+                    this.university = response.data;
+                    this.program = this.university.programmes.find((tempProgram) => tempProgram.id == this.$route.params.programId);
+                    $('html, body').animate({
+                        scrollTop: 1
+                    }, 500);
                 })
         },
     }
@@ -55,7 +58,7 @@
 
 <template>
     <div>
-        <section class="alan" :style='{ backgroundImage: `url(${programs.landingPhoto})` }'>
+        <section class="alan" :style='{ backgroundImage: `url(${university.landingPhoto})` }'>
             <nav class="navbar navbar-expand-sm navbar-light">
                 <router-link to="/" class="navbar-brand"><img src="http://localhost:8080/src/assets/abroadstation.png"> </router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,17 +85,17 @@
                     </ul>
                 </div>
             </nav>
+
             <div class="header-pic">
                 <div class="row">
-                    <h1 class="header-pic">{{programs.name}}</h1>
+                    <h1 class="header-pic">{{university.name}}</h1>
                 </div>
             </div>
             <div class="arama">
-  >
             <form>
                     <div class="login-form">
                         <div class="form-group ">
-                            <h1 class="header-pic" style="font-size: 50px !important;">{{programs.programmes[0].name}}</h1>
+                            <h1 class="header-pic" style="font-size: 50px !important;">{{program.name}}</h1>
                         </div>
                     </div>
                 </form>
@@ -110,24 +113,22 @@
 
                     <div class="numbers">
                         <i class="icon fa fa-graduation-cap"></i>
-                        <span class="counter">{{programs.programmes[0].duration}} Ay</span>
+                        <span class="counter">{{program.duration}} Ay</span>
                         <span class="label">EĞİTİM SÜRESİ</span>
                     </div>
 
 
                     <div class="numbers">
                         <i class="icon fa fa-globe"></i>
-                        <span class="counter">{{programs.programmes[0].tuition}} TL</span>
+                        <span class="counter">{{program.tuition}} TL</span>
                         <span class="label">FİYATI</span>
                     </div>
                 </div>
             </section>
-
-
         </section>
         <h1>Başvuru için Gerekenler</h1>
         <div class="container">
-            <h3>İelts Puanı: {{programs.programmes[0].ielts}}</h3>
+            <h3>İelts Puanı: {{program.ielts}}</h3>
             <h3>Ortalama : 3.0 ve üzeri </h3>
             <h3>2 Adet Niyet Mektubu</h3>
             <h3>Başvuru ücreti : 80$</h3>

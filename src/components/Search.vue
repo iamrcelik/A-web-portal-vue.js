@@ -47,8 +47,8 @@
 
         },
         methods: {
-            universityPage :function () {
-                this.$router.push(`/universities/${this.universitiesss[0].id}`)     },
+            universityPage :function (university, progammes) {
+                this.$router.push(`/universities/${university.id}/${progammes.id}`)     },
         }
     };
 
@@ -58,45 +58,51 @@
     <section>
         <app-header></app-header>
         <div v-for="university3 in universitiesss">
-            <div class="container">
-                <div class="listed-school animated">
-                    <div class="school-logo-wrap">
-                        <img src="https://d1qy7wmw5fq66c.cloudfront.net/media/18633/uduquébecàchicoutimi.jpg/listing">
-                    </div>
-                    <br>
-                    <h2><a v-on:click="universityPage">{{university3.name}}</a></h2>
-                    <h3><i data-icon="O"></i> {{university3.programmes[0].name}} , {{university3.programmes[0].duration}} Ay</h3>
-                    <h3><i class="fa fa-map-marker" ></i> {{university3.programmes[0].countryName}}    </h3>
-                    <div class="school-desc">
-                        <ul class="list-unstyled school-attributes">
-                            <li><i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                <span class="attribute-title">Öğrenci Sayısı</span>
-                                <span class="attribute-value">{{university3.studentNumber}}</span>
-                            </li>
-                            <li>
-                                <i class="fa fa-trophy" aria-hidden="true"></i>
-                                <span class="attribute-title">Üniversite Sıralaması</span>
-                                <span class="attribute-value">{{university3.ranking}}</span>
-                            </li>
-                            <li>
-                                <i class="fa fa-money" aria-hidden="true"></i>
-                                <span class="attribute-title">Fiyat</span>
-                                <span class="attribute-value">{{university3.programmes[0].tuition}} TL</span>
-                            </li>
-                        </ul>
-                        <p>UQAC is the third largest branch of the Université du Québec. It is a French-language institution offering programs in Arts, Sciences, Business, and Engineering, as well as a courses in French as a second language via the École de la langue française et de culture québécoise.
-                            <span class="ellipsis-more">... </span>
-                        </p>
-                    </div>
-                    <div class="school-action">
-                        <div class="school-rendered" id="schoolData1000">
-                            <div class="line-break">
+           <!-- <div v-for="universities4 in universitiesss.data"></div> --->
 
+                    <div v-for="programmes in university3.programmes">
+                        <div class="container">
+                            <div class="listed-school animated">
+                                <div class="school-logo-wrap">
+                                    <img src="https://d1qy7wmw5fq66c.cloudfront.net/media/18633/uduquébecàchicoutimi.jpg/listing">
+                                </div>
+                                <br>
+
+                                <h2><a v-on:click="universityPage(university3, programmes)">{{university3.name}}</a></h2>
+                    <h3><i data-icon="O"></i> {{programmes.name}} , {{programmes.duration}} Ay</h3>
+                    <h3><i class="fa fa-map-marker" ></i> {{programmes.countryName}}    </h3>
+                                <div class="school-desc">
+                                    <ul class="list-unstyled school-attributes">
+                                        <li><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                            <span class="attribute-title">Öğrenci Sayısı</span>
+                                            <span class="attribute-value">{{university3.studentNumber}}</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-trophy" aria-hidden="true"></i>
+                                            <span class="attribute-title">Üniversite Sıralaması</span>
+                                            <span class="attribute-value">{{university3.ranking}}</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-money" aria-hidden="true"></i>
+                                            <span class="attribute-title">Fiyat</span>
+                                            <span class="attribute-value">{{university3.programmes[0].tuition}} TL</span>
+                                        </li>
+                                    </ul>
+                                    <p>UQAC is the third largest branch of the Université du Québec. It is a French-language institution offering programs in Arts, Sciences, Business, and Engineering, as well as a courses in French as a second language via the École de la langue française et de culture québécoise.
+                                        <span class="ellipsis-more">... </span>
+                                    </p>
+                                </div>
+                                <div class="school-action">
+                                    <div class="school-rendered" id="schoolData1000">
+                                        <div class="line-break">
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+
         </div>
         <foota></foota>
     </section>

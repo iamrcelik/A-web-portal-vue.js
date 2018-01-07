@@ -25,6 +25,9 @@
                 .then(response => {this.userdata = response.data, this.isLoading = false;
                     console.log(this.$route.params.id)
                     console.log(response)
+                    $('html, body').animate({
+                        scrollTop: 1
+                    }, 500);
                 })
         },
         computed: {

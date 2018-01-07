@@ -77,7 +77,7 @@ export default {
             component: ResetPassword,
         },
         {
-            path: '/universities/:id',
+            path: '/universities/:id/:programId',
             component: ProgramsDetails,
         }
 
