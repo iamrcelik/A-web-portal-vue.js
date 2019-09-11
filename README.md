@@ -1,3 +1,7 @@
+#AbroadStation is my first term project to graduate from my university. 
+
+#AbroadStation is a web portal that was developed by Vue.js
+
 # router-ex
 
 > A Vue.js project
